@@ -1,0 +1,10 @@
+{
+  "version": 2,
+  "dgSpecHash": "QcbdDAoVoZFmJiv9MrIBnZvizZWC8o561Bhs+VbE6YBz6enIjQZRdHYPaOdoLtZMsSoSnwsTcWq1UzM68vIQFg==",
+  "success": true,
+  "projectFilePath": "C:\\Users\\lucas\\Documents\\Backend\\C#\\ProcessoSeletivo\\ProcessoSeletivo\\ProcessoSeletivo.csproj",
+  "expectedPackageFiles": [
+    "C:\\Users\\lucas\\.nuget\\packages\\jspdf.typescript.definitelytyped\\0.0.4\\jspdf.typescript.definitelytyped.0.0.4.nupkg.sha512"
+  ],
+  "logs": []
+}

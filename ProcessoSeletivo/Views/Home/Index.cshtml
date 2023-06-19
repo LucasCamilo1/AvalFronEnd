@@ -1,0 +1,119 @@
+﻿
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="~/css/style.css">
+
+     <script src="https://code.jquery.com/jquery-3.6.4.min.js"
+            integrity="sha256-oP6HI9z1XaZNBrJURtCoUT5SUnxFr8s3BzRl+cbzUq8="
+            crossorigin="anonymous">
+     </script>
+     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.1.0/jquery.min.js"></script>
+     <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/1.3.2/jspdf.min.js"></script>
+
+</head>
+<body>
+    <script type="text/javascript" src="~/js/script.js"></script>
+    <div class="body"></div>
+        <div class="grad"></div>
+        <br>
+        <div class="container-fluid">
+        <div class="cepR">
+                <h3>CEP do Remetente</h3>
+                <div class="col-md-4">
+                    <label>CEP: <br />
+                    <input name="cep" type="text" id="cep" value="" size="10" maxlength="9" /></label><br />
+                </div>
+                <div class="col-md-12">
+                    <label>Endereço:<br />
+                    <input name="rua" type="text" id="rua" size="60" /></label><br />
+                </div>
+                <div class="col-md-4">
+                    <label>Bairro: <br />
+                    <input name="bairro" type="text" id="bairro" size="40" /></label><br />
+                </div>
+                <div class="col-md-4">
+                    <label>Cidade: <br />
+                    <input name="cidade" type="text" id="cidade" size="40" /></label><br />
+                </div>
+                <div class="col-md-4">
+                    <label>Estado: <br />
+                    <input name="uf" type="text" id="uf" size="2" /></label><br />
+                </div>
+                <div class="col-md-4">
+                    <label>Número: 
+                    <input name="numD" type="text" id="num" size="2" /></label><br />
+                </div>
+                    <div class="col-md-4">
+                    <label>Complemento: 
+                <input name="compD" type="text" id="comp" size="2" /></label><br />
+                </div>
+                    <div class="col-md-4">
+                    <label>Nome: 
+                <input name="nomeD" type="text" id="nome" size="2" /></label><br />
+                </div>
+        </div>
+        </div>
+        <div class="container-lg">
+         <div class="cepD">
+                <h3>CEP do Destinatário</h3>
+                <div class="col-md-4">
+                    <label>CEP: <br />
+                    <input name="cepD" type="text" id="cepD" value="" size="10" maxlength="9" /></label><br />
+                </div>
+                <div class="col-md-12">
+                    <label>Endereço: <br />
+                    <input name="ruaD" type="text" id="ruaD" size="60" /></label><br />
+                </div>
+                <div class="col-md-4">
+                    <label>Bairro: 
+                    <input name="bairroD" type="text" id="bairroD" size="40" /></label><br />
+                </div>
+                <div class="col-md-4">
+                    <label>Cidade: 
+                    <input name="cidadeD" type="text" id="cidadeD" size="40" /></label><br />
+                </div>
+                    <div class="col-md-4">
+                    <label>Estado: 
+                <input name="ufD" type="text" id="ufD" size="2" /></label><br />
+                </div>
+                    <div class="col-md-4">
+                    <label>Número: 
+                <input name="numD" type="text" id="numD" size="2" /></label><br />
+                </div>
+                    <div class="col-md-4">
+                    <label>Complemento: 
+                <input name="compD" type="text" id="compD" size="2" /></label><br />
+                </div>
+                    <div class="col-md-4">
+                    <label>Nome: 
+                <input name="nomeD" type="text" id="nomeD" size="2" /></label><br />
+                </div>
+                <button onclick="generatePDF">Gerar PDF</button>
+        </div>
+        </div>
+</body>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.4.0/jspdf.umd.min.js"></script>
+  <script>
+    function generatePDF() {
+      const form = document.getElementById('cep');
+      const name = form.elements['rua'].value;
+      const email = form.elements['bairro'].value;
+      const message = form.elements['cidade'].value;
+
+      const pdf = new jsPDF();
+
+      pdf.text(`Nome: ${rua}`, 10, 10);
+      pdf.text(`Email: ${bairro}`, 10, 20);
+      pdf.text(`Mensagem: ${cidade}`, 10, 30);
+
+      pdf.save('formulario.pdf');
+    }
+  </script>
+
+</html>
